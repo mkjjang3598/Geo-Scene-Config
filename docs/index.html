@@ -182,7 +182,25 @@
       <div class="container is-max-desktop">
         <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
           <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">
-            Results <font size="4%">(Human, Synthetic)</font>
+            Free-Viewpoint Rendering
+          </h2>
+        </div>
+        <video width="100%" style="display: block; margin: auto" autoplay loop muted playsinline>
+          <source src="./assets/results/supple_video.mp4" type="video/mp4" />
+        </video>
+        <br/>
+        <p align="left" class="normal-text has-text-justified">
+          <b>Free-viewpoint rendering</b> on the Zip-NeRF <i>NYC</i> scene. By applying our geometry-aware scene configuration to <b>NeLF-Pro</b> and <b>LocalRF</b>, we demonstrate consistent improvements in rendering quality. Results generated from just <b>250 views</b>.
+        </p>
+        <br/>
+      </div>
+    </section>
+
+    <!-- <section class="section">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+          <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">
+            Results <font size="4%">(ScanNet++)</font>
           </h2>
         </div>
         <table>
@@ -212,75 +230,25 @@
           On the other hand, our method correctly captures temporal correlation and reconstruct meshes with smooth motion. 
         </p>
       </div>
-    </section>
+    </section> -->
 
     <section class="section">
       <div class="container is-max-desktop">
         <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
           <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">
-            Results <font size="4%">(Human, Real)</font>
+            Additional Comparison to SOTA 3DGS
           </h2>
         </div>
-        <table>
-          <tr>
-            <td class="gifs"><img src="./assets/gifs/human_input_5.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_ours_5.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_votehmr_5.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_zuo_5.gif"/></td>
-          </tr>
-          <tr>
-            <td class="gifs"><img src="./assets/gifs/human_input_0.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_ours_0.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_votehmr_0.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/human_zuo_0.gif"/></td>
-          </tr>
-          <tr>
-            <th style="text-align:center">Input</th>
-            <th style="text-align:center">Ours</th>
-            <th style="text-align:center">VoteHMR</th>
-            <th style="text-align:center">Zuo <i>et al.</i></th>
-          </tr>
-        </table>
+        <img src="./assets/results/3gs_comparison_scannetpp.png" width="100%" style="display: block; margin: auto" />
         <br/>
         <p align="left" class="normal-text has-text-justified">
-          Qualitative results on <a href="https://ieeexplore.ieee.org/document/6474999">Berkeley MHAD</a> dataset which is a real human motion dataset.
-          Even though the input point cloud is extremely noisy and the network is not fine-tuned to the noisy real data, our model recovers the mesh sequence.
+          <b>Qualitative comparison on ScanNet++.</b> Our method outperforms state-of-the-art 3D Gaussian Splatting baselines under the sparse-view setting, producing sharper textures and fewer artifacts in challenging indoor scenes.
         </p>
-      </div>
-    </section>
-
-    <section class="section"></section>
-      <div class="container is-max-desktop">
-        <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
-          <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">
-            Results <font size="4%">(Hand, Synthetic)</font>
-          </h2>
-        </div>
-        <table>
-          <tr>
-            <td class="gifs"><img src="./assets/gifs/hand_input_2.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_gt_2.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_ours_2.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_votehmr_2.gif"/></td>
-          </tr>
-          <tr>
-            <td class="gifs"><img src="./assets/gifs/hand_input_4.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_gt_4.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_ours_4.gif"/></td>
-            <td class="gifs"><img src="./assets/gifs/hand_votehmr_4.gif"/></td>
-          </tr>
-          <tr>
-            <th style="text-align:center">Input</th>
-            <th style="text-align:center">GT</th>
-            <th style="text-align:center">Ours</th>
-            <th style="text-align:center">VoteHMR-M</th>
-          </tr>
-        </table>
+        <br/>
+        <img src="./assets/results/3gs_comparison_zipnerf.png" width="100%" style="display: block; margin: auto" />
         <br/>
         <p align="left" class="normal-text has-text-justified">
-          Qualitative results on <a href="https://mks0601.github.io/InterHand2.6M/">InterHand2.6M</a> & <a href="https://lmb.informatik.uni-freiburg.de/resources/datasets/HanCo.en.html">HanCo</a> dataset.
-          VoteHMR-M is our modification of VoteHMR to fit the MANO hand model.
-          In the paper, we include quantitative analysis that our method achieves better result.
+          <b>Qualitative comparison on Zip-NeRF.</b> Our geometry-aware scene configuration consistently improves rendering quality over 3DGS baselines on large-scale unbounded outdoor scenes, demonstrating generalization beyond indoor environments.
         </p>
       </div>
     </section>
