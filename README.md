@@ -3,13 +3,22 @@
 Official code for **"Geometry-Aware Scene Configurations for Novel View Synthesis"**
 accepted to **IEEE Transactions on Visualization and Computer Graphics (TVCG) 2026**.
 
-**[Paper (arXiv)](https://arxiv.org/abs/2510.09880)** | **[Video](https://www.youtube.com/watch?v=U5001zsHz6w)** | **[Project Page](https://mkjjang3598.github.io/Geo-Scene-Config)** | **[Dataset](https://drive.google.com/file/d/1TtywOgYCZ5TTXqMzdnXBOWrIGI7TFb28/view?usp=sharing)**
+[Minkwan Kim](https://mkjjang3598.github.io) · [Changwoon Choi](https://changwoon.info) · [Young Min Kim](http://3d.snu.ac.kr/members)
+
+Seoul National University
+
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2510.09880)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://mkjjang3598.github.io/Geo-Scene-Config)
+[![Dataset](https://img.shields.io/badge/Dataset-Google%20Drive-green)](https://drive.google.com/file/d/1TtywOgYCZ5TTXqMzdnXBOWrIGI7TFb28/view?usp=sharing)
+[![Video](https://img.shields.io/badge/Video-YouTube-orange)](https://www.youtube.com/watch?v=U5001zsHz6w)
 
 ---
 
-## Abstract
+## Overview
 
 We propose scene-adaptive strategies to efficiently allocate representation capacity for generating immersive experiences of indoor environments from incomplete observations. Indoor scenes with multiple rooms often exhibit irregular layouts with varying complexity, containing clutter, occlusion, and flat walls. We maximize the utilization of limited resources with guidance from geometric priors, which are often readily available after pre-processing stages. We record observation statistics on the estimated geometric scaffold and guide the optimal placement of bases, greatly improving upon the uniform basis arrangements adopted by previous scalable scene representations. We also suggest scene-adaptive virtual viewpoints to compensate for geometric deficiencies inherent in view configurations in the input trajectory. We present a comprehensive analysis demonstrating significant enhancements compared to baselines that employ regular placements.
+
+![Teaser](docs/assets/teaser.png)
 
 ---
 
@@ -31,28 +40,9 @@ Geo-Scene-Config/
 
 ---
 
-## Requirements
-
-| Requirement | Version |
-|---|---|
-| Python | 3.8 |
-| PyTorch | 1.12.1+cu113 |
-| CUDA (torch) | 11.3 |
-| torchvision | 0.13.1+cu113 |
-| nerfstudio | 0.1.12 |
-| nerfacc | 0.3.5 |
-| numpy | 1.24.4 |
-| open3d | 0.19.0 |
-| opencv-python | 4.6.0.66 |
-| trimesh | 4.10.0 |
-| scipy | 1.10.1 |
-| colmap | 3.13.0 |
-
-> We used a conda environment (`geometry_basis`). Install PyTorch with CUDA 11.3 first, then install each submodule with `pip install -e .`.
-
----
-
 ## Installation
+> We used a conda environment (`geometry_basis`). Install PyTorch with CUDA 11.3 first, then install each submodule with `pip install -e .`.
+---
 
 ### 1. Clone with submodules
 
@@ -74,10 +64,12 @@ conda activate geometry_basis
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
-### 4. Install COLMAP
+### 4. NeLF-Pro
 
 ```bash
-conda install -c conda-forge colmap=3.13.0
+cd nelf-pro
+pip install -e .
+cd ..
 ```
 
 ### 5. MapAnything
@@ -88,21 +80,13 @@ pip install -e .
 cd ..
 ```
 
-### 6. NeLF-Pro
-
-```bash
-cd nelf-pro
-pip install -e .
-cd ..
-```
-
 ---
 
 ## Dataset
 
 Download from [Google Drive](https://drive.google.com/file/d/1TtywOgYCZ5TTXqMzdnXBOWrIGI7TFb28/view?usp=sharing) and extract to `data/`.
 
-Supported datasets: ScanNet++, ZipNeRF (360), Tanks & Temples, Scuol, KITTI-360.
+Supported datasets: ScanNet++ & ZipNeRF (TODO).
 
 Expected layout:
 ```
@@ -214,3 +198,8 @@ CUDA_VISIBLE_DEVICES=${GPU} ns-train depth-nelf-pro-small \
   publisher={IEEE}
 }
 ```
+
+---
+## Acknowledgements
+
+This project builds on [NeLF-Pro](https://github.com/sinoyou/nelf-pro), [LocalRF](https://github.com/facebookresearch/localrf), and [MapAnything](https://github.com/facebookresearch/map-anything).
