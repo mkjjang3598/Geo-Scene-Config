@@ -133,6 +133,8 @@ python map-anything/scripts/demo_inference_on_colmap_outputs.py \
 > **Order matters** — run in the sequence below.
 
 ```bash
+cd nelf-pro
+
 # Sample candidate viewpoints
 CUDA_VISIBLE_DEVICES=${GPU} ns-sample-viewpoint \
     --data ${IMAGE_PATH} \
