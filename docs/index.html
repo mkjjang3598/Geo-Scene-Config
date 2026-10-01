@@ -182,6 +182,31 @@
             Free-Viewpoint Rendering
           </h2>
         </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <video width="100%" style="display: block; margin: auto" autoplay loop muted playsinline>
+              <source src="./assets/results/scannetpp_785e_ours_vs_baselines.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="column is-half">
+            <video width="100%" style="display: block; margin: auto" autoplay loop muted playsinline>
+              <source src="./assets/results/scannetpp_e917_ours_vs_baselines_180.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <p align="left" class="normal-text has-text-justified">
+          <b>Free-viewpoint rendering</b> on two ScanNet++ scenes (<i>785e7504b9</i>, left; <i>e91722b5a3</i>, right). <b>Ours</b> applies our geometry-aware scene configuration to <b>NeLF-Pro</b> as the base model. 
+        </p>
+        <br/>
+        <video width="100%" style="display: block; margin: auto" autoplay loop muted playsinline>
+          <source src="./assets/results/nyc_ours_vs_baselines_365.mp4" type="video/mp4" />
+        </video>
+        <br/>
+        <p align="left" class="normal-text has-text-justified">
+          <b>Free-viewpoint rendering</b> on the Zip-NeRF <i>NYC</i> scene. Our geometry-aware scene configuration is agnostic to the choice of local NeRF model. For better visualization, we compute the basis locations with our method and instantiate each basis with <b>Zip-NeRF</b> instead of the TensoRF used in LocalRF. 
+        </p>
+        <br/>
+        <!-- Previous NYC free-viewpoint video (NeLF-Pro / LocalRF with standard NeRF bases), hidden for now.
         <video width="100%" style="display: block; margin: auto" autoplay loop muted playsinline>
           <source src="./assets/results/supple_video.mp4" type="video/mp4" />
         </video>
@@ -190,6 +215,7 @@
           <b>Free-viewpoint rendering</b> on the Zip-NeRF <i>NYC</i> scene. By applying our geometry-aware scene configuration to <b>NeLF-Pro</b> and <b>LocalRF</b>, we demonstrate consistent improvements in rendering quality. Results generated from just <b>250 views</b>.
         </p>
         <br/>
+        -->
       </div>
     </section>
 
